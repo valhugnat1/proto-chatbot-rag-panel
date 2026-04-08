@@ -1,0 +1,26 @@
+[
+  {
+    "name": "Jean Dupont",
+    "accounts": [
+      {"type": "Compte courant", "iban_last4": "1234", "balance": 2547.83},
+      {"type": "Livret A",       "iban_last4": "5678", "balance": 12500.00}
+    ],
+    "card": {"type": "Visa Premier", "status": "active"}
+  },
+  {
+    "name": "Marie Martin",
+    "accounts": [
+      {"type": "Compte courant", "iban_last4": "4321", "balance": -120.50}
+    ],
+    "card": {"type": "Visa Classic", "status": "active"}
+  },
+  {
+    "name": "Hugo Philipp",
+    "accounts": [
+      {"type": "Compte courant", "iban_last4": "9999", "balance": 8420.10},
+      {"type": "Livret A",       "iban_last4": "8888", "balance": 22000.00},
+      {"type": "PEA",            "iban_last4": "7777", "balance": 45300.55}
+    ],
+    "card": {"type": "Visa Infinite", "status": "active"}
+  }
+]

@@ -1,0 +1,62 @@
+# Local docker-compose for the full POC: db + backend + frontend.
+#
+# Usage:
+#   cp .env.example .env             # set MISTRAL_API_KEY
+#   docker compose up -d              # everything in background
+#   open http://localhost:5173        # frontend
+#
+# RAG ingestion (after `db` is healthy):
+#   docker compose exec backend python -m app.rag.ingest all
+#   # or with custom params:
+#   docker compose exec backend python -m app.rag.ingest all --max-pages 20 --max-depth 2
+
+services:
+  db:
+    image: pgvector/pgvector:pg16
+    environment:
+      POSTGRES_USER: bnp
+      POSTGRES_PASSWORD: bnp
+      POSTGRES_DB: bnp
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+      - ./infra/init-pgvector.sql:/docker-entrypoint-initdb.d/01-pgvector.sql:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U bnp -d bnp"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+
+  backend:
+    build: ./backend
+    environment:
+      MISTRAL_API_KEY: ${MISTRAL_API_KEY}
+      MISTRAL_MODEL: ${MISTRAL_MODEL:-mistral-large-latest}
+      MISTRAL_EMBED_MODEL: ${MISTRAL_EMBED_MODEL:-mistral-embed}
+      DATABASE_URL: postgresql+psycopg://bnp:bnp@db:5432/bnp
+      FRONTEND_URL: ${FRONTEND_URL:-http://localhost:5173}
+      LOG_LEVEL: ${LOG_LEVEL:-INFO}
+    ports:
+      - "8000:8000"
+    depends_on:
+      db:
+        condition: service_healthy
+    volumes:
+      # Hot-reload during dev: code changes don't require a rebuild.
+      - ./backend/app:/app/app
+
+  frontend:
+    build:
+      context: ./frontend
+      args:
+        # Backend URL baked into the build. For local Docker, the browser
+        # talks to the host-published backend port, so localhost is correct.
+        VITE_API_URL: ${VITE_API_URL:-http://localhost:8000}
+    ports:
+      - "5173:80"
+    depends_on:
+      - backend
+
+volumes:
+  pgdata:

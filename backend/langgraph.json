@@ -1,0 +1,7 @@
+{
+  "dependencies": ["."],
+  "graphs": {
+    "bnp_assistant": "./app/agent/agent.py:graph"
+  },
+  "env": "../.env"
+}

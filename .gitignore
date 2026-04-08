@@ -1,0 +1,21 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.pytest_cache/
+
+# Env / secrets
+.env
+.env.local
+
+# Scrape cache (regenerable)
+backend/app/data/scraped/*.jsonl
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store

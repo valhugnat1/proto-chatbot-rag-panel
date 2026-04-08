@@ -1,0 +1,146 @@
+:root {
+  /* BNP green accent */
+  --bnp-green: #00915a;
+  --bnp-green-hover: #00a868;
+  --bnp-green-dim: #006b42;
+
+  /* Dark theme — ChatGPT-flavored */
+  --bg-app: #212121;
+  --bg-sidebar: #171717;
+  --bg-message-assistant: #212121;
+  --bg-message-user: #2f2f2f;
+  --bg-input: #2f2f2f;
+  --bg-input-hover: #3a3a3a;
+  --bg-button: #ffffff;
+  --bg-button-hover: #e5e5e5;
+
+  --text-primary: #ececec;
+  --text-secondary: #b4b4b4;
+  --text-muted: #8e8e8e;
+  --text-button: #0d0d0d;
+
+  --border-color: #2f2f2f;
+  --border-input: #3f3f3f;
+
+  --radius-md: 12px;
+  --radius-lg: 24px;
+
+  font-family:
+    -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue',
+    Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color-scheme: dark;
+  color: var(--text-primary);
+  background-color: var(--bg-app);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#app {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+  color: inherit;
+}
+
+textarea {
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+  background: none;
+  border: none;
+  outline: none;
+  resize: none;
+}
+
+/* Scrollbars */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #444;
+  border-radius: 6px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* Markdown content (rendered in MessageBubble) */
+.md-content p {
+  margin: 0 0 0.75em 0;
+}
+.md-content p:last-child {
+  margin-bottom: 0;
+}
+.md-content ul,
+.md-content ol {
+  margin: 0 0 0.75em 0;
+  padding-left: 1.5em;
+}
+.md-content li {
+  margin-bottom: 0.25em;
+}
+.md-content code {
+  background: #1a1a1a;
+  padding: 0.1em 0.4em;
+  border-radius: 4px;
+  font-size: 0.9em;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+}
+.md-content pre {
+  background: #1a1a1a;
+  padding: 0.8em 1em;
+  border-radius: 8px;
+  overflow-x: auto;
+  margin: 0.5em 0;
+}
+.md-content pre code {
+  background: none;
+  padding: 0;
+}
+.md-content a {
+  color: var(--bnp-green-hover);
+  text-decoration: underline;
+}
+.md-content a:hover {
+  color: var(--bnp-green);
+}
+.md-content h1,
+.md-content h2,
+.md-content h3 {
+  margin: 0.8em 0 0.4em 0;
+  font-weight: 600;
+}
+.md-content h1 {
+  font-size: 1.4em;
+}
+.md-content h2 {
+  font-size: 1.2em;
+}
+.md-content h3 {
+  font-size: 1.05em;
+}
+.md-content blockquote {
+  border-left: 3px solid var(--bnp-green);
+  padding-left: 1em;
+  margin: 0.5em 0;
+  color: var(--text-secondary);
+}
