@@ -54,7 +54,8 @@ sources (URL).
 
     try:
         store = get_vector_store()
-        results = await store.asimilarity_search_with_score(query=query, k=5)
+        results = await store.asimilarity_search_with_score(query=query, k=10)
+
     except Exception as exc:
         logger.warning("Vector store search failed: %s", exc)
         return (
@@ -62,8 +63,15 @@ sources (URL).
             "(la base n'a peut-être pas encore été indexée)."
         )
 
+    for e in results:
+        print(e[0].metadata, e[1])
     # langchain-postgres returns cosine *distance* (lower = more similar).
     filtered = [(doc, score) for doc, score in results if score < 0.5]
+
+    print("\n\nFiltered:\n")
+    for e in filtered:
+        print(e[0].metadata, e[1])
+        print(e[0].page_content + "\n\n")
 
     if not filtered:
         return "Aucun résultat pertinent trouvé dans la base de connaissances."
