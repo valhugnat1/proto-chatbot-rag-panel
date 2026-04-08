@@ -64,14 +64,10 @@ sources (URL).
         )
 
     for e in results:
-        print(e[0].metadata, e[1])
+        print(e[1], e[0].metadata)
+
     # langchain-postgres returns cosine *distance* (lower = more similar).
     filtered = [(doc, score) for doc, score in results if score < 0.5]
-
-    print("\n\nFiltered:\n")
-    for e in filtered:
-        print(e[0].metadata, e[1])
-        print(e[0].page_content + "\n\n")
 
     if not filtered:
         return "Aucun résultat pertinent trouvé dans la base de connaissances."
