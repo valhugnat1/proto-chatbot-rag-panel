@@ -21,8 +21,7 @@ class Settings(BaseSettings):
     mistral_model: str = "mistral-large-latest"
     mistral_embed_model: str = "mistral-embed"
 
-    # --- Database (psycopg3 DSN) ---
-    # Example: postgresql+psycopg://bnp:bnp@db:5432/bnp
+    # --- Database ---
     database_url: str = "postgresql+psycopg://bnp:bnp@localhost:5432/bnp"
 
     # --- CORS ---

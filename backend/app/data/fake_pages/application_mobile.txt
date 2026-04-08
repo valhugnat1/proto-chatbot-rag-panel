@@ -1,0 +1,64 @@
+Application mobile et services digitaux BNP Paribas
+
+L'application mobile BNP Paribas permet aux clients de gérer l'ensemble de leurs comptes et services bancaires depuis leur smartphone ou leur tablette. Disponible gratuitement sur iOS et Android, elle est utilisée quotidiennement par plus de 6 millions de clients.
+
+Fonctionnalités principales
+
+Consultation des comptes
+- Vue d'ensemble de tous les comptes détenus (courants, épargne, crédits, placements)
+- Historique complet des opérations avec recherche et filtres
+- Catégorisation automatique des dépenses
+- Solde prévisionnel sur 30 jours
+- Téléchargement des relevés au format PDF
+
+Paiements et virements
+- Virements SEPA instantanés vers la France et la zone euro
+- Virements internationaux
+- Ajout de bénéficiaires avec double authentification
+- Paiement entre particuliers via Paylib sans coordonnées bancaires
+- Programmation de virements récurrents
+- Virement de compte à compte entre ses propres comptes BNP Paribas
+
+Gestion de la carte bancaire
+- Mise en pause temporaire de la carte en cas de doute
+- Modification des plafonds de paiement et de retrait en temps réel
+- Activation ou désactivation du paiement sans contact
+- Activation ou désactivation des paiements à l'étranger
+- Demande d'opposition en cas de perte ou de vol
+
+Sécurité et authentification
+
+L'application utilise une authentification forte conforme à la réglementation DSP2. L'accès se fait par :
+- Code secret personnel à 6 chiffres
+- Reconnaissance faciale (Face ID) ou empreinte digitale (Touch ID)
+- Validation des opérations sensibles via notification push ou SMS
+
+Les données sont chiffrées de bout en bout et ne sont jamais stockées en clair sur l'appareil.
+
+Paiement mobile
+
+BNP Paribas propose plusieurs solutions de paiement mobile :
+- Apple Pay : disponible pour les porteurs de carte Visa et Mastercard
+- Google Pay : disponible pour les détenteurs d'un smartphone Android
+- Paylib : solution française de paiement sans contact et entre particuliers
+- Samsung Pay : compatible avec les smartphones Samsung éligibles
+
+Outils de gestion du budget
+
+L'application intègre des outils de pilotage financier :
+- Catégorisation automatique des opérations (alimentation, transports, logement, loisirs, etc.)
+- Budgets personnalisables avec alertes de dépassement
+- Graphiques d'évolution des dépenses sur plusieurs mois
+- Objectifs d'épargne personnalisés
+- Comparaison avec les mois précédents
+
+Service client et assistance
+
+- Chat en ligne avec un conseiller pendant les heures d'ouverture
+- Prise de rendez-vous en agence directement depuis l'application
+- Centre d'aide avec recherche de questions fréquentes
+- Numéro d'urgence en cas de perte ou vol disponible 24h/24
+
+Disponibilité
+
+L'application est compatible avec les appareils iOS 14 et supérieurs, et Android 9 et supérieurs. Elle est mise à jour toutes les deux semaines environ pour corriger les bugs, améliorer les performances et ajouter de nouvelles fonctionnalités.

@@ -1,21 +1,3 @@
-"""Vector store factory.
-
-Returns a memoized `PGVector` instance backed by Mistral embeddings. The
-underlying tables (`langchain_pg_collection`, `langchain_pg_embedding`)
-are auto-created on first use; the only DB-side prerequisite is
-`CREATE EXTENSION IF NOT EXISTS vector;`.
-
-Note on async_mode: we use async_mode=True so that `aadd_documents` and
-`asimilarity_search_with_score` work — without it, langchain-postgres'
-internal `_async_engine` is never initialized and any `a*` call raises
-`AssertionError: _async_engine not found`. Sync methods (`add_documents`,
-`similarity_search`) are NOT available when async_mode=True; you must
-use the async variants.
-
-References:
-- https://github.com/langchain-ai/langchain-postgres/issues/100
-- https://github.com/langchain-ai/langgraph/discussions/3904
-"""
 from functools import lru_cache
 
 from langchain_mistralai import MistralAIEmbeddings

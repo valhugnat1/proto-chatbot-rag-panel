@@ -87,20 +87,6 @@ docker compose exec backend python -m app.rag.ingest \
   --url https://en.wikipedia.org/wiki/Hello_bank! --max-pages 10 --max-depth 1
 ```
 
-### Ingesting local files
-
-In addition to web pages, you can index local `.txt` files dropped into
-`backend/app/data/fake_pages/`. Every file in that folder is chunked and
-indexed into the same pgvector collection, with a GitHub URL as its `source`.
-
-```bash
-docker compose exec backend python -m app.rag.ingest_files
-```
-
-Re-running the command fully replaces any previously indexed version of each
-file (old chunks are wiped, new ones re-inserted). To remove a file from the
-vector store entirely, delete it manually via `psql` — see below.
-
 ### Managing the vector store
 
 ```bash

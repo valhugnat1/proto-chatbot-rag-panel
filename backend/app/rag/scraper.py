@@ -92,19 +92,16 @@ async def crawl(site: SiteConfig) -> list[ScrapedPage]:
             html = response.text
             soup = BeautifulSoup(html, "html.parser")
             
-            # --- CORRECTION DES DATES <time> ---
             for time_tag in soup.find_all("time"):
                 text = time_tag.get_text(strip=True)
                 datetime_val = time_tag.get("datetime")
                 
-                # Ex: remplace <time datetime="2012-10">oct 2012</time> par "oct 2012 (2012-10)"
                 if datetime_val and text:
                     time_tag.replace_with(f"{text} ({datetime_val})")
                 elif text:
                     time_tag.replace_with(text)
                 elif datetime_val:
                     time_tag.replace_with(datetime_val)
-            # -----------------------------------
 
             clean_html = str(soup)
             content = (trafilatura.extract(clean_html, include_comments=False, include_tables=False) or "").strip()
