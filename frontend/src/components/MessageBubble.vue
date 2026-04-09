@@ -18,10 +18,17 @@ marked.setOptions({
   breaks: true,
 });
 
+DOMPurify.addHook("afterSanitizeAttributes", (node) => {
+  if (node.tagName === "A") {
+    node.setAttribute("target", "_blank");
+    node.setAttribute("rel", "noopener noreferrer");
+  }
+});
+
 const renderedHtml = computed(() => {
   if (!props.content) return "";
   const raw = marked.parse(props.content);
-  return DOMPurify.sanitize(raw);
+  return DOMPurify.sanitize(raw, { ADD_ATTR: ["target", "rel"] });
 });
 
 const isUser = computed(() => props.role === "user");
