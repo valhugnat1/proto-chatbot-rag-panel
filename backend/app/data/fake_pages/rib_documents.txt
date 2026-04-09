@@ -1,0 +1,73 @@
+RIB et documents bancaires BNP Paribas
+
+Le RIB (Relevé d'Identité Bancaire) est un document essentiel qui regroupe les coordonnées bancaires nécessaires à la domiciliation de virements, prélèvements ou salaires. BNP Paribas permet à ses clients d'obtenir leur RIB et autres documents bancaires par plusieurs canaux, majoritairement en ligne et sans frais.
+
+Qu'est-ce qu'un RIB
+
+Un RIB contient les informations suivantes :
+- Le nom et l'adresse du titulaire du compte
+- Le code IBAN (International Bank Account Number) au format FR suivi de 25 caractères
+- Le code BIC (Bank Identifier Code) de BNP Paribas : BNPAFRPPXXX
+- Le nom et l'adresse de l'agence de rattachement
+- Le code banque, le code guichet, le numéro de compte et la clé RIB
+
+L'IBAN et le BIC sont les informations indispensables pour effectuer ou recevoir un virement SEPA en Europe.
+
+Obtenir un RIB depuis l'application mobile
+
+La méthode la plus rapide consiste à télécharger le RIB directement depuis l'application BNP Paribas :
+1. Se connecter à l'application avec son code ou sa biométrie
+2. Sélectionner le compte concerné dans l'écran d'accueil
+3. Appuyer sur l'icône Informations du compte ou le menu contextuel
+4. Sélectionner Télécharger mon RIB
+5. Le document au format PDF s'affiche et peut être enregistré, imprimé, envoyé par e-mail ou partagé via les applications du téléphone
+
+L'opération est instantanée, gratuite et disponible 24h/24.
+
+Obtenir un RIB depuis l'espace client en ligne
+
+Sur bnpparibas.fr, après connexion à l'espace client :
+1. Accéder à la rubrique Mes comptes
+2. Cliquer sur le compte souhaité
+3. Sélectionner l'onglet Documents ou Téléchargements
+4. Télécharger le RIB au format PDF
+
+Obtenir un RIB en agence
+
+Il est également possible de demander un RIB papier à un distributeur automatique BNP Paribas ou auprès de son conseiller en agence, gratuitement.
+
+Autres documents disponibles
+
+BNP Paribas met à disposition dans l'espace client et dans l'application mobile de nombreux documents utiles, téléchargeables gratuitement :
+
+Relevés de compte
+- Relevés mensuels des comptes courants, livrets et comptes titres
+- Historique sur 10 ans disponible en ligne
+- Téléchargement au format PDF
+
+Attestations
+- Attestation de domiciliation de compte
+- Attestation de détention de compte
+- Attestation de solvabilité
+- Attestation fiscale annuelle (IFU - Imprimé Fiscal Unique)
+- Attestation de versement sur un PEA, une assurance vie ou un livret
+
+Justificatifs d'opérations
+- Justificatifs de virement émis ou reçu
+- Reçus de paiement par carte bancaire
+- Avis d'opérations sur titres
+
+Récapitulatifs annuels
+- Récapitulatif annuel des frais bancaires (envoyé chaque année en janvier)
+- Récapitulatif fiscal pour la déclaration de revenus
+
+Frais associés
+
+- Téléchargement depuis l'application ou l'espace client : gratuit et illimité
+- RIB imprimé en agence : gratuit
+- Envoi postal d'un duplicata de relevé : 9 euros par document
+- Recherche de documents de plus de 5 ans : 25 euros par dossier
+
+Sécurité et partage du RIB
+
+Le RIB peut être communiqué en toute sécurité à un tiers pour recevoir un virement (par exemple, communiquer son RIB à son employeur pour le versement du salaire). En revanche, il est fortement recommandé de ne jamais communiquer son RIB en réponse à un e-mail non sollicité ou sur un site non vérifié : le RIB seul ne permet pas d'effectuer un retrait, mais il peut être utilisé pour tenter de mettre en place des prélèvements frauduleux. En cas de prélèvement non reconnu, le client dispose de 8 semaines pour en demander le remboursement via son application ou auprès de son conseiller.

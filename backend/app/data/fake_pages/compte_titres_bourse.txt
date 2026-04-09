@@ -1,0 +1,95 @@
+Compte-Titres Ordinaire et passage d'ordres de bourse BNP Paribas
+
+Le Compte-Titres Ordinaire (CTO) est une enveloppe d'investissement sans plafond de versement ni restriction géographique, permettant d'investir sur l'ensemble des marchés financiers mondiaux. BNP Paribas propose un CTO accessible à tous ses clients particuliers, en complément ou en alternative au PEA.
+
+Caractéristiques du Compte-Titres
+
+- Aucun plafond de versement
+- Aucune restriction géographique : investissement possible sur les marchés français, européens, américains, asiatiques
+- Titres éligibles : actions, obligations, ETF, OPCVM, warrants, produits dérivés
+- Versements et retraits libres à tout moment
+- Détention individuelle, conjointe ou en indivision possible
+
+Différences avec le PEA
+
+Contrairement au PEA, le CTO ne bénéficie pas d'un régime fiscal avantageux. Les plus-values et dividendes sont soumis au prélèvement forfaitaire unique de 30 % (ou au barème progressif de l'impôt sur le revenu sur option). En revanche, le CTO offre une liberté totale d'investissement, sans limitation géographique ni de type d'instrument.
+
+Le CTO est souvent utilisé en complément d'un PEA dont le plafond de 150 000 euros est atteint, ou pour investir sur des marchés non éligibles au PEA (États-Unis, Asie, émergents).
+
+Passer un ordre de bourse chez BNP Paribas
+
+BNP Paribas propose plusieurs canaux pour passer des ordres de bourse :
+
+1. Depuis l'application mobile BNP Paribas
+L'application permet une gestion complète du compte-titres et du PEA :
+- Consultation des cours en temps réel ou différé selon les marchés
+- Passage d'ordres d'achat et de vente
+- Suivi des ordres en cours et de l'historique
+- Visualisation du portefeuille avec valorisation et performance
+- Accès aux analyses et recherches BNP Paribas
+
+2. Depuis l'espace client en ligne
+Sur bnpparibas.fr, la rubrique Bourse offre des fonctionnalités avancées pour les investisseurs actifs : graphiques techniques, carnets d'ordres, alertes personnalisables, comparateurs.
+
+3. Par téléphone auprès du service Bourse
+Le service téléphonique permet de passer des ordres assistés par un opérateur, utile pour les montants importants ou les ordres complexes. Ce canal est facturé à un tarif supérieur (frais majorés).
+
+4. Auprès du conseiller en agence
+Les clients peuvent également confier leurs ordres à leur conseiller pour exécution.
+
+Étapes pour passer un ordre depuis l'application
+
+1. Se connecter à l'application BNP Paribas
+2. Accéder à la rubrique Bourse ou Mes comptes titres
+3. Rechercher la valeur souhaitée par nom, code ISIN ou code mnémonique
+4. Sélectionner Acheter ou Vendre
+5. Choisir la quantité, le type d'ordre et sa validité
+6. Vérifier le récapitulatif et valider par authentification forte (Face ID, Touch ID ou code)
+7. Recevoir une confirmation immédiate du statut de l'ordre
+
+Types d'ordres disponibles
+
+- Ordre au marché : exécution immédiate au meilleur cours disponible, sans limite de prix
+- Ordre à cours limité : exécution uniquement si le cours atteint la limite fixée
+- Ordre à seuil de déclenchement (stop) : devient un ordre au marché dès que le cours atteint le seuil
+- Ordre à plage de déclenchement : combine un seuil de déclenchement et une limite haute
+- Ordre à la meilleure limite : exécution au meilleur cours offert à l'instant du passage
+
+Durée de validité des ordres
+
+- Ordre jour : valable uniquement pour la séance en cours
+- Ordre à date : valable jusqu'à une date précise (maximum 1 an)
+- Ordre à révocation : valable jusqu'à exécution ou annulation (dans la limite fixée par le marché)
+
+Tarification des ordres de bourse
+
+Les frais de courtage appliqués par BNP Paribas dépendent du montant de l'ordre et du marché :
+
+Ordres sur Euronext Paris et autres places européennes
+- Jusqu'à 1 000 euros : 7,50 euros par ordre
+- De 1 000 à 3 000 euros : 0,60 % du montant de l'ordre
+- De 3 000 à 8 000 euros : 0,50 % du montant de l'ordre
+- Au-delà de 8 000 euros : 0,40 % du montant de l'ordre
+
+Ordres sur les marchés américains et internationaux
+- À partir de 20 euros par ordre, plus une commission proportionnelle au montant
+- Frais de change éventuels pour les devises étrangères
+
+Droits de garde
+- 0,40 % de la valorisation du portefeuille par an, plafonnés à 45 euros par an pour le PEA et à 150 euros par an pour le CTO
+- Gratuits pour les clients Banque Privée au-delà d'un certain seuil d'encours
+
+Heures d'ouverture des marchés
+
+Les ordres peuvent être saisis 24h/24 dans l'application et sur le site, mais ils ne sont exécutés que pendant les heures d'ouverture des marchés :
+- Euronext Paris : du lundi au vendredi de 9h00 à 17h30
+- Marchés américains (NYSE, Nasdaq) : du lundi au vendredi de 15h30 à 22h00 (heure de Paris)
+
+Les ordres passés en dehors de ces horaires sont mis en attente et transmis à l'ouverture suivante.
+
+Accompagnement et conseil
+
+BNP Paribas met à disposition de ses clients plusieurs niveaux d'accompagnement selon leur profil :
+- Gestion libre : le client passe lui-même ses ordres en autonomie
+- Conseil ponctuel : un conseiller en agence peut orienter les choix d'investissement
+- Gestion sous mandat : la gestion est entièrement déléguée à une équipe d'experts BNP Paribas, accessible à partir de certains seuils d'encours

@@ -46,7 +46,7 @@ locals {
   # On extrait juste "abc-123.pg.sdb.fr-par.scw.cloud".
   # Note : avec un seul groupe de capture, `regex()` renvoie directement la
   # string capturée (pas une liste). Avec plusieurs groupes, ce serait une liste.
-  db_host = regex("postgres://([^:/]+)", scaleway_sdb_sql_database.bnp.endpoint)
+  db_host = regex("postgres://([^:/]+)", scaleway_sdb_sql_database.bnp.endpoint)[0]
 
   # DSN final, prêt à être injecté comme env var DATABASE_URL.
   database_url = format(

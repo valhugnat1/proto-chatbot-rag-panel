@@ -1,0 +1,64 @@
+Découvert autorisé BNP Paribas
+
+Le découvert autorisé, également appelé facilité de caisse, est une autorisation accordée par BNP Paribas permettant au titulaire d'un compte courant d'avoir un solde négatif dans une limite convenue à l'avance. C'est une solution de trésorerie ponctuelle pour faire face aux décalages entre rentrées et dépenses.
+
+Principe et fonctionnement
+
+Le découvert autorisé est défini contractuellement entre le client et sa banque. Tant que le solde débiteur reste dans la limite autorisée et pour une durée limitée, seuls des agios (intérêts débiteurs) sont facturés. Au-delà de la limite ou de la durée autorisée, le découvert devient non autorisé et entraîne des frais supplémentaires significatifs.
+
+Montant du découvert autorisé
+
+Le montant du découvert autorisé est déterminé par BNP Paribas en fonction du profil du client :
+- Revenus mensuels nets domiciliés sur le compte
+- Historique bancaire et régularité des revenus
+- Situation d'endettement globale
+- Offre Esprit Libre souscrite
+
+En pratique, le découvert autorisé correspond généralement à une fraction des revenus mensuels nets, souvent entre 30 % et 100 % selon le profil. Un salaire de 2 500 euros nets peut par exemple donner lieu à un découvert autorisé compris entre 800 et 2 500 euros.
+
+Taux d'intérêt (agios) en vigueur
+
+- Découvert autorisé : taux débiteur annuel de 8 % (TAEG indicatif, variable selon le profil)
+- Découvert non autorisé (dépassement) : taux débiteur annuel de 16 % TAEG
+- Commission d'intervention : 8 euros par opération en dépassement, plafonnée à 80 euros par mois
+
+Les agios sont calculés quotidiennement sur le solde débiteur et prélevés trimestriellement sur le compte courant.
+
+Demander une augmentation de son découvert autorisé
+
+Plusieurs canaux permettent de demander une modification du découvert autorisé :
+
+1. Depuis l'application mobile BNP Paribas
+Dans la rubrique Mon compte, section Découvert autorisé, le client peut visualiser son autorisation actuelle et soumettre une demande d'augmentation. La demande est étudiée sous 48 à 72 heures ouvrées.
+
+2. Depuis l'espace client en ligne
+La même démarche est disponible sur bnpparibas.fr dans la rubrique dédiée à la gestion du compte courant.
+
+3. Par messagerie sécurisée
+Le client peut contacter directement son conseiller pour exposer sa demande et son contexte (dépense exceptionnelle, décalage de trésorerie temporaire, etc.).
+
+4. En agence ou par téléphone
+Une demande peut être formulée auprès du conseiller bancaire lors d'un rendez-vous ou en appelant le 3477.
+
+Pièces justificatives demandées
+
+Pour étudier une demande d'augmentation, BNP Paribas peut demander :
+- Les trois derniers bulletins de salaire
+- Le dernier avis d'imposition
+- Un relevé des charges mensuelles récurrentes (loyer, crédits en cours)
+- Un justificatif de la dépense exceptionnelle éventuelle motivant la demande
+
+Augmentation temporaire
+
+Pour faire face à une dépense ponctuelle (achat important, imprévu), il est possible de demander une augmentation temporaire du découvert autorisé pour une durée définie (généralement 1 à 3 mois). Cette solution est souvent plus simple à obtenir qu'une augmentation permanente.
+
+Alternatives au découvert
+
+Le découvert autorisé doit rester une solution ponctuelle. Pour un besoin de financement récurrent ou important, BNP Paribas recommande des alternatives plus économiques :
+- Prêt personnel amortissable (à partir de 5,30 % TAEG) pour un projet identifié
+- Crédit renouvelable pour une réserve de trésorerie (plus coûteux)
+- Épargne de précaution sur un Livret A pour anticiper les imprévus
+
+Protection des clients fragiles
+
+Pour les clients en situation de fragilité financière, BNP Paribas applique une offre spécifique avec un plafonnement renforcé des frais d'incident à 25 euros par mois et un accompagnement personnalisé pour rétablir l'équilibre du compte.
