@@ -45,6 +45,8 @@ destroy:
 urls:
 	@echo "Frontend: $$($(TF) output -raw frontend_url)"
 	@echo "Backend:  $$($(TF) output -raw backend_url)"
+	@echo "Database URL: $$($(TF) output -raw database_url)"
+
 
 db-shell:
 	@PGPASSWORD=$$($(TF) output -raw db_password) psql \
