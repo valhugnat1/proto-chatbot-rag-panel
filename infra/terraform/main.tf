@@ -1,84 +1,54 @@
-###############################################################################
-# main.tf
-#
-# Point d'entrée Terraform pour le déploiement BNP Chatbot POC sur Scaleway.
-#
-# Ordre de lecture conseillé pour comprendre l'infra :
-#   1. main.tf       → provider, namespace (= container registry), IAM
-#   2. database.tf   → Serverless SQL Database + DSN exporté
-#   3. containers.tf → containers serverless backend + frontend
-#   4. variables.tf  → toutes les variables d'entrée
-#   5. outputs.tf    → URLs publiques + commandes utiles
-#
-# Avant d'appliquer, exporter ces variables d'environnement :
-#   export SCW_ACCESS_KEY=...
-#   export SCW_SECRET_KEY=...
-#   export SCW_DEFAULT_PROJECT_ID=...
-#   export SCW_DEFAULT_REGION=fr-par
-#
-# Puis :
-#   terraform init
-#   terraform apply -var "mistral_api_key=..."
-###############################################################################
-
 terraform {
   required_version = ">= 1.5"
-
   required_providers {
     scaleway = {
       source  = "scaleway/scaleway"
       version = ">= 2.40"
     }
-    random = {
-      source  = "hashicorp/random"
-      version = ">= 3.5"
-    }
   }
 }
 
 provider "scaleway" {
-  # Toutes les credentials sont lues depuis l'environnement :
-  #   SCW_ACCESS_KEY, SCW_SECRET_KEY, SCW_DEFAULT_PROJECT_ID, SCW_DEFAULT_REGION
-  # On force quand même la région ici pour éviter toute surprise.
-  region = "fr-par"
+  region     = "fr-par"
+  project_id = var.project_id
 }
 
-###############################################################################
-# Namespace de containers serverless
-#
-# Un namespace Scaleway est à la fois :
-#   - un groupe logique pour les containers serverless
-#   - un Container Registry (rg.fr-par.scw.cloud/<namespace>)
-#
-# C'est dans ce registry que `build_and_push.sh` poussera les images.
-###############################################################################
+# --- Variables ---------------------------------------------------------------
+
+variable "project_id" {
+  type = string
+}
+
+variable "mistral_api_key" {
+  type      = string
+  sensitive = true
+}
+
+variable "image_tag" {
+  type    = string
+  default = "latest"
+}
+
+locals {
+  name = "bnp-chatbot"
+}
+
+# --- Container registry + namespace ------------------------------------------
 
 resource "scaleway_container_namespace" "main" {
-  name        = "${var.project_name}-${var.environment}"
-  description = "BNP Chatbot POC — namespace + registry"
+  name       = local.name
+  project_id = var.project_id
 }
 
-###############################################################################
-# IAM application + clé API pour le backend
-#
-# Le Serverless SQL Database utilise IAM pour l'authentification :
-#   - le username est l'ID de l'IAM application (ou user)
-#   - le password est la secret key d'une API key liée à cette application
-#
-# On crée une application dédiée avec uniquement les droits "DatabasesReadWrite"
-# sur le projet, plus restrictive que de réutiliser la clé personnelle.
-###############################################################################
+# --- IAM identity for the backend to reach the DB ----------------------------
 
 resource "scaleway_iam_application" "backend" {
-  name        = "${var.project_name}-${var.environment}-backend"
-  description = "Application IAM utilisée par le backend pour se connecter à la Serverless SQL DB"
+  name = "${local.name}-backend"
 }
 
 resource "scaleway_iam_policy" "backend_db" {
-  name           = "${var.project_name}-${var.environment}-backend-db"
-  description    = "Accès lecture/écriture à la Serverless SQL DB du projet"
+  name           = "${local.name}-backend-db"
   application_id = scaleway_iam_application.backend.id
-
   rule {
     project_ids          = [var.project_id]
     permission_set_names = ["ServerlessSQLDatabaseReadWrite"]
@@ -87,5 +57,99 @@ resource "scaleway_iam_policy" "backend_db" {
 
 resource "scaleway_iam_api_key" "backend" {
   application_id = scaleway_iam_application.backend.id
-  description    = "Clé API utilisée par le backend pour le DSN PostgreSQL"
+}
+
+# --- Serverless SQL Database (pgvector-capable) ------------------------------
+
+resource "scaleway_sdb_sql_database" "bnp" {
+  name       = local.name
+  project_id = var.project_id
+  min_cpu    = 0
+  max_cpu    = 4
+}
+
+locals {
+  db_host      = regex("postgres://([^:/]+)", scaleway_sdb_sql_database.bnp.endpoint)[0]
+  database_url = "postgresql+psycopg://${scaleway_iam_application.backend.id}:${scaleway_iam_api_key.backend.secret_key}@${local.db_host}:5432/${scaleway_sdb_sql_database.bnp.name}?sslmode=require"
+}
+
+# --- Backend container (FastAPI + LangGraph) ---------------------------------
+
+resource "scaleway_container" "backend" {
+  name           = "${local.name}-backend"
+  namespace_id   = scaleway_container_namespace.main.id
+  registry_image = "${scaleway_container_namespace.main.registry_endpoint}/backend:${var.image_tag}"
+  port           = 8000
+  cpu_limit      = 1000
+  memory_limit   = 2048
+  min_scale      = 1
+  max_scale      = 3
+  timeout        = 300
+  privacy        = "public"
+  http_option    = "redirected"
+  deploy         = true
+
+  environment_variables = {
+    MISTRAL_MODEL       = "mistral-large-latest"
+    MISTRAL_EMBED_MODEL = "mistral-embed"
+    FRONTEND_URL        = "https://${scaleway_container.frontend.domain_name}"
+  }
+
+  secret_environment_variables = {
+    MISTRAL_API_KEY = var.mistral_api_key
+    DATABASE_URL    = local.database_url
+  }
+}
+
+# --- Frontend container (Vue SPA on nginx) -----------------------------------
+
+resource "scaleway_container" "frontend" {
+  name           = "${local.name}-frontend"
+  namespace_id   = scaleway_container_namespace.main.id
+  registry_image = "${scaleway_container_namespace.main.registry_endpoint}/frontend:${var.image_tag}"
+  port           = 80
+  cpu_limit      = 500
+  memory_limit   = 512
+  min_scale      = 0
+  max_scale      = 2
+  timeout        = 60
+  privacy        = "public"
+  http_option    = "redirected"
+  deploy         = true
+}
+
+# --- Outputs -----------------------------------------------------------------
+
+output "frontend_url" {
+  value = "https://${scaleway_container.frontend.domain_name}"
+}
+
+output "backend_url" {
+  value = "https://${scaleway_container.backend.domain_name}"
+}
+
+output "registry_endpoint" {
+  value = scaleway_container_namespace.main.registry_endpoint
+}
+
+output "db_host" {
+  value = local.db_host
+}
+
+output "db_name" {
+  value = scaleway_sdb_sql_database.bnp.name
+}
+
+output "db_user" {
+  value = scaleway_iam_application.backend.id
+}
+
+output "db_password" {
+  value     = scaleway_iam_api_key.backend.secret_key
+  sensitive = true
+}
+
+output "database_url" {
+  value     = local.database_url
+  sensitive = true
 }

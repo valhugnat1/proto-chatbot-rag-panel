@@ -1,20 +1,2 @@
-# Copier en `terraform.tfvars` puis remplir.
-# `terraform.tfvars` est dans le .gitignore — ne JAMAIS committer.
-
-# ID du projet Scaleway dans lequel déployer
-# (à récupérer dans la console : Settings → Project → ID)
-project_id = "00000000-0000-0000-0000-000000000000"
-
-# Clé API Mistral
-mistral_api_key = "your-mistral-api-key-here"
-
-# Optionnel : préfixe et environnement
-# project_name = "bnp-chatbot"
-# environment  = "prod"
-
-# Optionnel : modèles Mistral
-# mistral_model       = "mistral-large-latest"
-# mistral_embed_model = "mistral-embed"
-
-# Optionnel : tag d'image (le script build_and_push.sh le surcharge)
-# image_tag = "latest"
+project_id      = "00000000-0000-0000-0000-000000000000"
+mistral_api_key = "your-mistral-api-key"

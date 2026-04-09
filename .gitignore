@@ -19,3 +19,20 @@ backend/app/data/scraped/*.jsonl
 
 # OS
 .DS_Store
+
+
+# Terraform state — CONTAINS SECRETS, ne jamais committer
+*.tfstate
+*.tfstate.*
+*.tfstate.backup
+
+# Variables avec credentials
+terraform.tfvars
+*.auto.tfvars
+
+# Plugins et locks (peuvent être committed mais pas obligatoire pour un POC)
+.terraform/
+.terraform.lock.hcl
+
+# Plans
+*.tfplan
